@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- <suite name="regression_test" parallel="tests" thread-count="4"> -->
+	<suite name="regression_test" >
+	<parameter name="execute_remotely" value="N"></parameter>
+	<parameter name="hub_ip_address" value="192.168.0.100"></parameter>
+	<parameter name="exclude" value="0"></parameter>
+	<parameter name="author" value="swanand"></parameter>
+	<parameter name="category" value="Regression"></parameter>
+	<parameter name="date" value="23-NOV-2023"></parameter>
+	<parameter name="Browser" value="chrome"></parameter>
+	<parameter name="url" value="https://www.espn.in/"></parameter>
+	<parameter name="filepath" 	value="E:\\selenium\\JARS\\chromedriver.exe"></parameter>
+
+
+
+	<listeners>
+		<listener class-name="psl.espn.listeners.SuiteListener"></listener>
+		<listener class-name="psl.espn.listeners.TestCaseListener"></listener>
+	</listeners>
+
+
+	<!-- test 
+	<test
+		name="12. Verify SignUp functionality by passing valid username and password">
+		<parameter name="TestCaseID" value="12"></parameter>
+		<parameter name="description" value="verify login"></parameter>
+		<parameter name="loginusername" value="QA30@yahoo.com"></parameter>
+		<parameter name="loginnewpassword" value="password123"></parameter>
+		<parameter name="loginfirstname" value="Swanand"></parameter>
+		<parameter name="loginlastname" value="Ranade"></parameter>
+		<parameter name="cityname" value="Pune"></parameter>
+		<parameter name="statename" value="Maharashtra"></parameter>
+		<classes>
+			<class name="psl.espn.config.LaunchApplication">
+				<methods>
+					<include name="launchApp"></include>
+				</methods>
+			</class>
+			<class name="psl.espn.modules.SignUpModule">
+				<methods>
+					<include name="CreateAccount"></include>
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+	<test
+		name="13. Verify SignUp functionality by passing valid username and password">
+		<parameter name="TestCaseID" value="13"></parameter>
+		<parameter name="description" value="verify login"></parameter>
+		<parameter name="loginusername" value="QA9@yahoo.com"></parameter>
+		<parameter name="loginpassword" value="password123"></parameter>
+		<parameter name="loginfirstname" value="Swanand"></parameter>
+		<parameter name="loginlastname" value="Ranade"></parameter>
+		<classes>
+			<class name="psl.espn.config.LaunchApplication">
+				<methods>
+					<include name="launchApp"></include>
+				</methods>
+			</class>
+			<class name="psl.espn.modules.SignUpModule">
+				<methods>
+					<include name="SignInDeletedAccount"></include>
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+	<test name="14. Verify Address Book">
+		<parameter name="TestCaseID" value="14"></parameter>
+		<parameter name="description" value="verify login"></parameter>
+		<parameter name="loginusername" value="QASwanand@yahoo.com"></parameter>
+		<parameter name="loginpassword" value="password123"></parameter>
+		<parameter name="loginfirstname" value="Swanand"></parameter>
+		<parameter name="loginlastname" value="Ranade"></parameter>
+		<parameter name="cityname" value="Pune"></parameter>
+		<parameter name="statename" value="Maharashtra"></parameter>
+		<classes>
+			<class name="psl.espn.config.LaunchApplication">
+				<methods>
+					<include name="launchApp"></include>
+				</methods>
+			</class>
+			<class name="psl.espn.modules.SignUpModule">
+				<methods>
+					<include name="AddressBook"></include>
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+-->
+
+	<test
+		name="15. Verify SignUp functionality by passing Invalid username. ">
+		<parameter name="TestCaseID" value="15"></parameter>
+		<parameter name="description" value="verify login"></parameter>
+		<parameter name="loginusername" value="testQA@yahoo"></parameter>
+		<parameter name="loginnewpassword" value="password123"></parameter>
+		<parameter name="loginfirstname" value="Swanand"></parameter>
+		<parameter name="loginlastname" value="Ranade"></parameter>
+		<classes>
+			<class name="psl.espn.config.LaunchApplication">
+				<methods>
+					<include name="launchApp"></include>
+				</methods>
+			</class>
+			<class name="psl.espn.modules.SignUpModule">
+				<methods>
+					<include name="SignUpInvalidUser1"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+<!--
+	<test
+		name="16. Verify SignUp functionality by passing blank username. ">
+		<parameter name="TestCaseID" value="16"></parameter>
+		<parameter name="description" value="verify login"></parameter>
+		<parameter name="loginusername" value=""></parameter>
+		<parameter name="loginnewpassword" value="password123"></parameter>
+		<parameter name="loginfirstname" value="Swanand"></parameter>
+		<parameter name="loginlastname" value="Ranade"></parameter>
+		<classes>
+			<class name="psl.espn.config.LaunchApplication">
+				<methods>
+					<include name="launchApp"></include>
+				</methods>
+			</class>
+			<class name="psl.espn.modules.SignUpModule">
+				<methods>
+					<include name="SignUpInvalidUser2"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="17. Verify SignUp functionality by passing blank first name ">
+		<parameter name="TestCaseID" value="17"></parameter>
+		<parameter name="description" value="verify login"></parameter>
+		<parameter name="loginusername" value="testQA50@yahoo.com"></parameter>
+		<parameter name="loginnewpassword" value=""></parameter>
+		<parameter name="loginfirstname" value=""></parameter>
+		<parameter name="loginlastname" value=""></parameter>
+		<classes>
+			<class name="psl.espn.config.LaunchApplication">
+				<methods>
+					<include name="launchApp"></include>
+				</methods>
+			</class>
+			<class name="psl.espn.modules.SignUpModule">
+				<methods>
+					<include name="SignUpInvalidFirstName"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="18. Verify Invalid Password ">
+		<parameter name="TestCaseID" value="18"></parameter>
+		<parameter name="description" value="verify login"></parameter>
+		<parameter name="loginusername" value="testQA50@yahoo.com"></parameter>
+		<parameter name="loginnewpassword" value="abc"></parameter>
+		<parameter name="loginfirstname" value="abc"></parameter>
+		<parameter name="loginlastname" value="xyz"></parameter>
+		<classes>
+			<class name="psl.espn.config.LaunchApplication">
+				<methods>
+					<include name="launchApp"></include>
+				</methods>
+			</class>
+			<class name="psl.espn.modules.SignUpModule">
+				<methods>
+					<include name="SignUpInvalidPassword1"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+	<test
+		name="19. Verify SignUp functionality by passing Invalid Password ">
+		<parameter name="TestCaseID" value="19"></parameter>
+		<parameter name="description" value="verify login"></parameter>
+		<parameter name="loginusername" value="testQA50@yahoo.com"></parameter>
+		<parameter name="loginnewpassword" value="abc123"></parameter>
+		<parameter name="loginfirstname" value="abc"></parameter>
+		<parameter name="loginlastname" value="xyz"></parameter>
+		<classes>
+			<class name="psl.espn.config.LaunchApplication">
+				<methods>
+					<include name="launchApp"></include>
+				</methods>
+			</class>
+			<class name="psl.espn.modules.SignUpModule">
+				<methods>
+					<include name="SignUpInvalidPassword2"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+ Suite -->
+
+</suite> 
+
+
+
+

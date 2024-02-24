@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- <suite name="regression_test" parallel="tests" thread-count="4"> -->
+	<suite name="regression_test" >
+	<parameter name="execute_remotely" value="N"></parameter>
+	<parameter name="hub_ip_address" value="192.168.0.100"></parameter>
+	<parameter name="exclude" value="0"></parameter>
+	<parameter name="author" value="swanand"></parameter>
+	<parameter name="category" value="Regression"></parameter>
+	<parameter name="date" value="23-NOV-2023"></parameter>
+	<parameter name="Browser" value="chrome"></parameter>
+	<parameter name="url" value="https://www.espn.in/"></parameter>
+	<parameter name="filepath" 	value="E:\\selenium\\JARS\\chromedriver.exe"></parameter>
+
+
+	<listeners>
+		<listener class-name="psl.espn.listeners.SuiteListener"></listener>
+		<listener class-name="psl.espn.listeners.TestCaseListener"></listener>
+	</listeners>
+
+	<test
+		name="1. Verify login functionality by passing invalid username ">
+		<parameter name="TestCaseID" value="1"></parameter>
+		<parameter name="description" value="verify invalid login"></parameter>
+		<!-- <parameter name="loginusername" value=""> 	</parameter> 
+		<parameter name="loginpassword" value=""></parameter> -->
+		<classes>
+			<class name="psl.espn.config.LaunchApplication">
+				<methods>
+					<include name="launchApp"></include>
+				</methods>
+			</class>
+			<class name="psl.espn.modules.loginModule">
+				<methods>
+					<include name="invalidLogin"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test
+		name="2. Verify global search functionality by passing search input">
+		<parameter name="TestCaseID" value="2"></parameter>
+		<parameter name="description" value="verify login"></parameter>
+		<parameter name="loginusername" value="QASwanand@yahoo.com"></parameter>
+		<parameter name="loginpassword" value="password123"></parameter>
+		<classes>
+			<class name="psl.espn.config.LaunchApplication">
+				<methods>
+					<include name="launchApp"></include>
+				</methods>
+			</class>
+			<class name="psl.espn.modules.loginModule">
+				<methods>
+					<include name="loginAddFav"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="3. Verify login functionality by passing invalid username ">
+		<parameter name="TestCaseID" value="3"></parameter>
+		<parameter name="description" value="verify invalid login"></parameter>
+		<parameter name="loginusername" value=""></parameter>
+		<parameter name="loginpassword" value=""></parameter>
+		<classes>
+			<class name="psl.espn.config.LaunchApplication">
+				<methods>
+					<include name="launchApp"></include>
+				</methods>
+			</class>
+			<class name="psl.espn.modules.loginModule">
+				<methods>
+					<include name="invalidLogin1"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="4. Verify login functionality by passing blank username ">
+		<parameter name="TestCaseID" value="4"></parameter>
+		<parameter name="description" value="verify invalid login"></parameter>
+		<parameter name="loginusername" value=""></parameter>
+		<parameter name="loginpassword" value=""></parameter>
+		<classes>
+			<class name="psl.espn.config.LaunchApplication">
+				<methods>
+					<include name="launchApp"></include>
+				</methods>
+			</class>
+			<class name="psl.espn.modules.loginModule">
+				<methods>
+					<include name="invalidLogin2"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="5. Verify login functionality by passing invalid password">
+		<parameter name="TestCaseID" value="5"></parameter>
+		<parameter name="description" value="verify invalid login"></parameter>
+		<parameter name="loginusername" value=""></parameter>
+		<parameter name="loginpassword" value=""></parameter>
+		<classes>
+			<class name="psl.espn.config.LaunchApplication">
+				<methods>
+					<include name="launchApp"></include>
+				</methods>
+			</class>
+			<class name="psl.espn.modules.loginModule">
+				<methods>
+					<include name="invalidLogin3"></include>
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="6. Verify login functionality by passing blank password">
+		<parameter name="TestCaseID" value="6"></parameter>
+		<parameter name="description" value="verify invalid login"></parameter>
+		<parameter name="loginusername" value=""></parameter>
+		<parameter name="loginpassword" value=""></parameter>
+		<classes>
+			<class name="psl.espn.config.LaunchApplication">
+				<methods>
+					<include name="launchApp"></include>
+				</methods>
+			</class>
+			<class name="psl.espn.modules.loginModule">
+				<methods>
+					<include name="invalidLogin4"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="7. Verify Add Favourite functionality ">
+		<parameter name="TestCaseID" value="7"></parameter>
+		<parameter name="description" value="verify login"></parameter>
+		<parameter name="loginusername" value="QASwanand@yahoo.com"></parameter>
+		<parameter name="loginpassword" value="password123"></parameter>
+		<classes>
+			<class name="psl.espn.config.LaunchApplication">
+				<methods>
+					<include name="launchApp"></include>
+				</methods>
+			</class>
+			<class name="psl.espn.modules.loginModule">
+				<methods>
+					<include name="GlobalSearch"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="8. Verify  Invalid Mobile no ">
+		<parameter name="TestCaseID" value="8"></parameter>
+		<parameter name="description" value="verify login"></parameter>
+		<parameter name="loginusername" value="testQA20@yahoo.com"></parameter>
+		<parameter name="loginpassword" value="password123"></parameter>
+		<parameter name="loginfirstname" value="abc"></parameter>
+		<parameter name="loginlastname" value="xyz"></parameter>
+		<parameter name="mobno" value="98812345"></parameter>
+		<classes>
+			<class name="psl.espn.config.LaunchApplication">
+				<methods>
+					<include name="launchApp"></include>
+				</methods>
+			</class>
+			<class name="psl.espn.modules.loginModule">
+				<methods>
+					<include name="verifyInvalidMobile"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="9. Verify Top Section ">
+		<parameter name="TestCaseID" value="9"></parameter>
+		<parameter name="description" value="verify login"></parameter>
+		<parameter name="loginusername" value="testQA20@yahoo.com"></parameter>
+		<parameter name="loginpassword" value="password123"></parameter>
+
+		<classes>
+			<class name="psl.espn.config.LaunchApplication">
+				<methods>
+					<include name="launchApp"></include>
+				</methods>
+			</class>
+			<class name="psl.espn.modules.loginModule">
+				<methods>
+					<include name="verifyTopSection"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+
+
+	<test name="10. Verify verifyESPNCricInfoLink ">
+		<parameter name="TestCaseID" value="10"></parameter>
+		<parameter name="description" value="verify login"></parameter>
+		<parameter name="loginusername" value="testQA20@yahoo.com"></parameter>
+		<parameter name="loginpassword" value="password123"></parameter>
+
+		<classes>
+			<class name="psl.espn.config.LaunchApplication">
+				<methods>
+					<include name="launchApp"></include>
+				</methods>
+			</class>
+			<class name="psl.espn.modules.loginModule">
+				<methods>
+					<include name="verifyESPNCricInfoLink"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="11. Verify verifyESPNCricInfoLink Search">
+		<parameter name="TestCaseID" value="11"></parameter>
+		<parameter name="description" value="verify login"></parameter>
+		<parameter name="loginusername" value="testQA20@yahoo.com"></parameter>
+		<parameter name="loginpassword" value="password123"></parameter>
+
+		<classes>
+			<class name="psl.espn.config.LaunchApplication">
+				<methods>
+					<include name="launchApp"></include>
+				</methods>
+			</class>
+			<class name="psl.espn.modules.loginModule">
+				<methods>
+					<include name="verifyESPNCricInfoSearch"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- test -->
+</suite> <!-- Suite -->
+
+
+
+
